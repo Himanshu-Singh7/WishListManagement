@@ -40,14 +40,14 @@ public class WishListController {
 		List<WishListDto> wishList = this.wishListServices.getWishList();
 		return new ResponseEntity<List<WishListDto>>(wishList,HttpStatus.OK);
 	}
-	
+	// GetWishlist By Id
     
 	@GetMapping("/{wishlistId}")
 	public ResponseEntity<WishListDto> getWishListById(@PathVariable("wishlistId") Integer id){
 		WishListDto wishList = this.wishListServices.getWishListById(id);
 		return ResponseEntity.ok(wishList);
 	}
-	
+	// Delete WishList
 	@DeleteMapping("/{wishlistId}")
 	public ResponseEntity<ApiResponse> deleteWishList(@PathVariable("wishlistId") Integer id){
 		this.wishListServices.deleteWishList(id);
